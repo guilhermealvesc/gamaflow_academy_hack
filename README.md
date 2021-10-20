@@ -30,5 +30,5 @@ Sugerimos a utilização de virtual enviroment para evitar falhas.
 
 # Time
 
-| [<img src="https://avatars.githubusercontent.com/u/60170326?v=4" width="115"><br><sub>@guilhermealvesc</sub>](https://github.com/guilhermealvesc) | [<img src="https://avatars.githubusercontent.com/u/47534514?v=4" width="115"><br><sub>@heitorfreitasferreira</sub>](https://github.com/heitorfreitasferreira) |
-| :---: | :---: |
+| [<img src="https://avatars.githubusercontent.com/u/60170326?v=4" width="115"><br><sub>@guilhermealvesc</sub>](https://github.com/guilhermealvesc) | [<img src="https://avatars.githubusercontent.com/u/47534514?v=4" width="115"><br><sub>@heitorfreitasferreira</sub>](https://github.com/heitorfreitasferreira) | [<img src="https://avatars.githubusercontent.com/u/80831572?v=4" width="115"><br><sub>@claudineyrt</sub>](https://github.com/claudineyrt) |
+| :---: | :---: | :---: |
