@@ -1,4 +1,4 @@
-# Título do projeto  
+# Data Flow 
 ## Visão Geral  
 Esta é uma documentação modelo para os projetos do Academy Hack.  
 Aqui você deverá descrever uma visão geral do seu projeto.  
@@ -30,5 +30,5 @@ Sugerimos a utilização de virtual enviroment para evitar falhas.
 
 # Time
 
-| [<img src="https://avatars3.githubusercontent.com/u/41878170?s=115&v=4" width="115"><br><sub>@alexandremendoncaalvaro</sub>](https://github.com/alexandremendoncaalvaro) | [<img src="https://avatars.githubusercontent.com/u/21226851?v=4" width="115"><br><sub>@danielblu</sub>](https://github.com/danielblu) |
+| [<img src="https://avatars.githubusercontent.com/u/60170326?v=4" width="115"><br><sub>@guilhermealvesc</sub>](https://github.com/guilhermealvesc) | [<img src="https://avatars.githubusercontent.com/u/47534514?v=4" width="115"><br><sub>@heitorfreitasferreira</sub>](https://github.com/heitorfreitasferreira) |
 | :---: | :---: |
