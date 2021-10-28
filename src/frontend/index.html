@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo da API</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <style>
+        html{
+            font-family: 'Roboto', sans-serif;
+        }
+        .resultado, .last-inserted{
+            background-color: #F5F5F5;
+            border: 1px solid #E3E3E3;
+            border-radius: 5px;
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            margin: 20px 20vw;
+            padding: 20px 4rem;
+        }
+        .botoes{
+            display: flex;
+            justify-content: space-around;
+            margin: 3rem 20vw ;
+        }
+        button{
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+    <div class="botoes">
+        <button type="reset">1 Compra</button>
+        <button type="reset">10 Compras</button>
+        <button type="reset">100 Compras</button>
+        <button type="reset">1000 Compras</button>
+    </div>
+    <div class="last-inserted">
+        <h2>
+            Último item comprado:
+        </h2>
+        <h2>
+            Quantidade:
+        </h2>
+    </div>
+    <div class="resultado">
+        <div class="top-k">
+            <h1>Top 1</h1>
+            <p>
+                
+            </p>
+        </div>
+        <div class="top-k">
+            <h1>Top 2</h1>
+            <p>
+                
+            </p>
+        </div>
+        <div class="top-k">
+            <h1>Top 3</h1>
+            <p>
+                
+            </p>
+        </div>
+        <div class="top-k">
+            <h1>Top 4</h1>
+            <p>
+                
+            </p>
+        </div>
+        <div class="top-k">
+            <h1>Top 5</h1>
+            <p>
+                
+            </p>
+        </div>
+     </div>   
+    <script>
+        const handleClick = (x)=>{
+            for (let i = 0; i < x; i++) {
+                consume('http://localhost:3000/nextAvaliable')
+            }
+        }
+        const updateScreenLastInserted = (item)=>{
+            document.querySelector('body > div.last-inserted > h2:nth-child(1)').innerHTML = 'Último item comprado: '+item.insertedItem
+            document.querySelector('body > div.last-inserted > h2:nth-child(2)').innerHTML = 'Quantidade: ' + item.orderQnt
+        }
+        const updateScreenResultado = (x)=>{
+            const top1 = document.querySelector('.top-k:nth-child(1) p')
+            const top2 = document.querySelector('.top-k:nth-child(2) p')
+            const top3 = document.querySelector('.top-k:nth-child(3) p')
+            const top4 = document.querySelector('.top-k:nth-child(4) p')
+            const top5 = document.querySelector('.top-k:nth-child(5) p')
+            top1.innerHTML = x[0].nome
+            top2.innerHTML = x[1].nome
+            top3.innerHTML = x[2].nome
+            top4.innerHTML = x[3].nome
+            top5.innerHTML = x[4].nome
+        }
+        const consume = (url)=>{
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({}),
+            })
+            .then(response => response.json())
+            .then(data => {
+            console.log(data.insertedItem,data.orderQnt);
+            updateScreenLastInserted(data)
+            updateScreenResultado(data.top_5)
+            })
+            .catch((error) => {
+            console.error('Error:', error);
+            });
+        }
+        const buttons = document.querySelectorAll('.botoes button')
+        buttons.forEach(button => {
+            button.addEventListener('click', ()=>{  
+                handleClick(parseInt(button.innerText.split(' ')[0]))
+            })
+        })
+    </script>
+</body>
+</html>
