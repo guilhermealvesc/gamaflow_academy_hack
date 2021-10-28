@@ -17,7 +17,7 @@ Este projeto propõe uma aplicação híbrida de técnicas baseadas em Data Stre
 
 ## Arquitetura
 
-![Arquitetura do projeto](readme/arquitetura_2.png)
+![Arquitetura do projeto](readme/arquitetura_2.jpg)
 
 > Arquitetura do projeto completo
 
