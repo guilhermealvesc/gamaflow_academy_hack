@@ -139,7 +139,7 @@ routes.post('/nextAvaliable',(req,res)=>{
     if(index === -1)
         res.send({message:"Brand not found"})
     dataBase[nextAvaliableId].used = true
-    arrayOfBrands[index].pontos += 0.7 + (arrayOfBrands[index].pontos * 0.3/2100)
+    arrayOfBrands[index].pontos += 0.7 + (dataBase[nextAvaliableId].orderQnt * 0.3/2100)
     arrayOfBrands.sort((a, b) => a.pontos> b.pontos ? -1 : 1)
     historicOfTop.push(arrayOfBrands.filter((item,idx) => idx <= 5))
     // console.log(historicOfTop);
