@@ -1,7 +1,5 @@
 # Gama Flow 
-## Visão Geral  
-Esta é uma documentação modelo para os projetos do Academy Hack.  
-Aqui você deverá descrever uma visão geral do seu projeto.  
+## Apresentação
 
 [Link da Apresentação do Projeto](https://docs.google.com/presentation/d/1_thbqf4pGjSlmLS2WHl_3Q4oaW9Q3BhREpoJyFDRUsY/edit?usp=sharing)
 

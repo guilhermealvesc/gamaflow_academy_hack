@@ -123,6 +123,9 @@ routes.get('/last/:k', (req, res) => {
     arrayOfBrands.sort((a, b) => a.pontos> b.pontos ? -1 : 1)
     res.send(arrayOfBrands.filter((item,idx) => idx <= k))
 })
+routes.get('/nomes',(req,res)=>{
+    res.send(arrayOfBrands.map((e)=>e.nome))
+})
 // routes.post('/:brand',(req,res)=>{
 //     const brand = req.params.brand
 //     res.send(brand)
@@ -140,6 +143,11 @@ routes.post('/nextAvaliable',(req,res)=>{
         res.send({message:"Brand not found"})
     dataBase[nextAvaliableId].used = true
     arrayOfBrands[index].pontos += 0.7 + (dataBase[nextAvaliableId].orderQnt * 0.3/2100)
+    // arrayOfBrands[index].pontos += 0.7 + (arrayOfBrands[index].pontos * 0.3/2100)
+    // Fator de envelhecimento
+    for (let i = 0; i < arrayOfBrands.length; i++) {
+        arrayOfBrands[i].pontos -= 1/arrayOfBrands.length
+    }
     arrayOfBrands.sort((a, b) => a.pontos> b.pontos ? -1 : 1)
     historicOfTop.push(arrayOfBrands.filter((item,idx) => idx <= 5))
     // console.log(historicOfTop);
@@ -147,7 +155,7 @@ routes.post('/nextAvaliable',(req,res)=>{
     res.send({
         insertedItem:`${dataBase[nextAvaliableId-1].subrand}`,
         orderQnt:`${dataBase[nextAvaliableId-1].orderQnt}`,
-        top_5:arrayOfBrands.filter((item,idx) => idx <= 5)
+        top_5:arrayOfBrands.filter((item,idx) => idx < 5)
     })
 })
 module.exports = routes
